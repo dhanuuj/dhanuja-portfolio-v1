@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:              #080808;   /* near-black background */
+  --surface:         #111111;   /* card / section backgrounds */
+  --surface-2:       #1a1a1a;   /* elevated cards */
+  --border:          #222222;   /* subtle borders */
+  --text:            #f2f2f2;   /* primary text */
+  --text-muted:      #888888;   /* secondary text, labels */
+  --text-faint:      #444444;   /* very subtle, decorative */
+  --accent:          #f0a500;   /* warm amber — the ONLY accent color */
+  --accent-dim:      #7a5300;   /* muted amber for borders/tags */
+  --accent-glow:     rgba(240, 165, 0, 0.12); /* glow for hover states */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f0a500;
+}
+
+/* Background grid overlay */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Blinking REC indicator dot */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+/* Card Shadows and Glow */
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.card-glow-hover {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card-glow-hover:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 8px 32px rgba(240, 165, 0, 0.08);
+}
+
+/* Underlying animations styles if needed */
+.text-stroke-faint {
+  -webkit-text-stroke: 1px rgba(240, 165, 0, 0.05);
+  color: transparent;
+}
