@@ -69,7 +69,7 @@ export function Hero() {
         </motion.p>
 
         {/* Name Heading */}
-        <div className="font-syne font-extrabold text-white text-[32px] md:text-[72px] leading-[0.95] tracking-tight mb-8 select-none">
+        <div className="font-syne font-extrabold text-white text-[30px] md:text-[72px] leading-[0.95] tracking-tight mb-8 select-none">
           {/* DHANUJA */}
           <motion.div
             variants={nameContainer1}
